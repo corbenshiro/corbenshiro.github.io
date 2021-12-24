@@ -3,7 +3,7 @@
 	<title>Corben Dredge</title>
 	<subtitle>Cybersecurity Enthusiast</subtitle>
 	<link href="https://corbenshiro.github.io/atom.xml" rel="self" type="application/atom+xml"/>
-	<link href="https://corbenshiro.github.io"/>
+  <link href="https://corbenshiro.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
 	<updated>2021-05-20T00:00:00+00:00</updated>
 	<id>https://corbenshiro.github.io/atom.xml</id>
@@ -58,7 +58,7 @@ sig!         EA8467B35E8C5186 2021-04-02  Corben Dredge (Master Keyring) &amp;lt
 &lt;p&gt;The OpenPGP-compliant system I personally recommend is GnuPG, if you have installed the program — refer to its manpages, if not; consult the online documentation: &lt;a href=&quot;https:&#x2F;&#x2F;gnupg.org&#x2F;documentation&#x2F;&quot;&gt;gnupg.org&#x2F;documentation&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;audit&quot;&gt;Audit&lt;&#x2F;h2&gt;
 &lt;p&gt;If you&#x27;re viewing the HTML5 version of my site, you can audit it via the Lighthouse tool that is bundled in Chromium-based browsers (I recommend ungoogled-chromium). Lighthouse supports testing with device emulation, i.e. to execute mobile mode on a desktop machine or vice versa.&lt;&#x2F;p&gt;
-&lt;p&gt;Use of Incognito mode or even better; a DisposableVM (if on Qubes OS) or Microsoft Defender Application Guard (if on Windows 10 (Hyper-V is a prerequisite)) — is at your own discretion.&lt;&#x2F;p&gt;
+&lt;p&gt;Use of Incognito mode or even better; a DisposableVM (if on Qubes OS) or Microsoft Defender Application Guard (if on Windows NT (Hyper-V is a prerequisite)) — is at your own discretion.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 </feed>
