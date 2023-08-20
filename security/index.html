@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <script src="https://corbenshiro.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://corbenshiro.github.io/abridge.css?h=04311a1197b1b049c295" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script defer src="https://corbenshiro.github.io/js/abridge.min.js?h=7a008ae54f397de4791e" integrity="sha384-jWwR5syXn2tklQhfP11jqm8HMndEVkXtIwiozHBykMgdpgb7hy3apk7Zaj8t7ekR"></script>
+  <meta name="base" content="https://corbenshiro.github.io" />
+  <link rel="alternate" type="application/atom+xml" title="Corben Dredge Atom/RSS Feed" href="https://corbenshiro.github.io/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Security of this Site | Corben Dredge</title>
+  <meta name="author" content="Corben Dredge" />
+  <meta name="copyright" content="Corben Dredge" />
+  <meta name="description" content="An article that delves into the security model of this site." />
+  <link rel="canonical" href="https://corbenshiro.github.io/security/" />
+  <meta name="keywords" content="GnuPG, OpenSSH, Git, Blog" />
+  <meta property="og:url" content="https://corbenshiro.github.io/security/" />
+  <meta name="twitter:url" content="https://corbenshiro.github.io/security/" />
+  <meta property="og:description" content="An article that delves into the security model of this site." />
+  <meta name="twitter:description" content="An article that delves into the security model of this site." />
+  <meta property="og:title" content="Security of this Site | Corben Dredge" />
+  <meta name="twitter:title" content="Security of this Site | Corben Dredge" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://corbenshiro.github.io/banner.png" />
+  <meta property="og:image" content="https://corbenshiro.github.io/banner.png" />
+  <meta property="og:site_name" content="Corben Dredge" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2023-08-31" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://corbenshiro.github.io/manifest.json" />
+  <link rel="mask-icon" href="https://corbenshiro.github.io/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://corbenshiro.github.io/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://corbenshiro.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://corbenshiro.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://corbenshiro.github.io/favicon-16x16.png" />
+  <script defer src="https://corbenshiro.github.io/js/sw_load.min.js?h=ac03e1b594cb8325dd85" integrity="sha384-56qJE4yU4MFI6hRCx/brjBxKKpsh7xTEIFbhakvqf/yMmRzuFPY/YuOGCgf+dOFn"></script>
+  <noscript><link rel="stylesheet" href="https://corbenshiro.github.io/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><h1><a href="https://corbenshiro.github.io"><font color="#f90">Corben&#39s </font>Humble Abode</a></h1></div>
+      <div>
+        <a href="https://corbenshiro.github.io/about/"> About </a><a href="https://corbenshiro.github.io/archive/"> Posts </a><a href="https://corbenshiro.github.io/categories/"> Categories </a><a href="https://corbenshiro.github.io/tags/"> Tags </a><i type="reset" id="mode" class="js svgs adjust"></i>
+      </div>
+      <div>
+        <form autocomplete=off class="js" name="goSearch" id="searchbox">
+          <div class="searchd">
+            <input id="searchinput" type="text" placeholder="Search" title="Search" />
+            <button type="submit" title="Search" class="svgs search"></button>
+          </div>
+          <div class="results"><div id="suggestions"></div></div>
+        </form>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://corbenshiro.github.io/security/">Security of this Site</a></h1>
+      <span class="s95"> Corben Dredge<span class="hpad"> </span>August 31, 2023<span class="hpad"> </span> [<a href="https://corbenshiro.github.io/categories/technology/">Technology</a>] #<a href="https://corbenshiro.github.io/tags/cybersecurity/">Cybersecurity</a> </span>
+
+<h2 id="authenticity">Authenticity</h2>
+<p>As of August 2023 all Git commits belonging to me are PGP-signed by my private Ed25519 subkey (certified via my master Ed25519 key). They are also pushed over SSH and authenticated by the very same subkey. I use the gpg-agent daemon to manage all of my keys.</p>
+<p>Whilst an issued TLS certificate associated with its respective website (e.g. HTTPS) is usually enough for authenticity (e.g. preventing MITM attacks), it does not mitigate comprehensive attack vectors such as mistakenly issued certificates and CA breaching (server-side), and certificate store poisoning (client-side).</p>
+<p>Still, most browsers don't have pinned certificates, nor do many servers support key pinning. The modern web is built upon trusted roots; whilst it does have its downsides, it does however prevent sysadmins from any potential misconfiguration of their key pinning.</p>
+<p>Due to the aformentioned, I implore you to verify this website (contents of <a href="/">/</a>) and any of my other wares using the information provided.</p>
+<p>Get the public keypair to my commit signing/pushing subkey:</p>
+<ul>
+<li><a href="/corbenshiro.asc">/corbenshiro.asc</a></li>
+<li><a rel="noopener" target="_blank" href="https://github.com/corbenshiro.gpg">github.com/corbenshiro.gpg</a></li>
+<li><a rel="noopener" target="_blank" href="https://codeberg.org/corbenite.gpg">codeberg.org/corbenite.gpg</a></li>
+</ul>
+<p>Cross-reference against my fingerprints:</p>
+<ul>
+<li><a rel="noopener" target="_blank" href="https://corbenite.codeberg.page/fpr.txt">corbenite.codeberg.page/fpr.txt</a>
+<ul>
+<li><a rel="noopener" target="_blank" href="https://corbenite.codeberg.page/subfpr.txt">corbenite.codeberg.page/subfpr.txt</a></li>
+</ul>
+</li>
+<li><a rel="noopener" target="_blank" href="https://cdredge.neocities.org/fpr.txt">cdredge.neocities.org/fpr.txt</a>
+<ul>
+<li><a rel="noopener" target="_blank" href="https://cdredge.neocities.org/subfpr.txt">cdredge.neocities.org/subfpr.txt</a></li>
+</ul>
+</li>
+<li><a rel="noopener" target="_blank" href="https://cdredge.surge.sh/fpr.txt">cdredge.surge.sh/fpr.txt</a>
+<ul>
+<li><a rel="noopener" target="_blank" href="https://cdredge.surge.sh/subfpr.txt">cdredge.surge.sh/subfpr.txt</a></li>
+</ul>
+</li>
+</ul>
+<pre class="z-code"><code><span class="z-text z-plain">pub   ed25519 2023-08-31 [C]
+      CD9B FF15 C79C 2D0F 533F  682E CB01 EBA8 B48F 7A2A
+</span></code></pre>
+<pre class="z-code"><code><span class="z-text z-plain">sub   ed25519 2023-08-31 [S]
+      E1F4 B46A ED84 1C40 3ADD  1090 2BFA B105 9A58 3670
+</span></code></pre>
+<p>My public curriculum vitæ can be viewed at: <a href="/cv-public.pdf">/cv-public.pdf</a></p>
+<p>My private curriculum vitæ (which includes my full phone no.) has a detached PGP signature which you can use to verify said CV: <a href="/cv.pdf.asc">/cv.pdf.asc</a></p>
+<p>The OpenPGP-compliant system I personally recommend is GnuPG, if you have installed the program — refer to its manpages, if not; consult the online documentation: <a rel="noopener" target="_blank" href="https://gnupg.org/documentation/">gnupg.org/documentation/</a></p>
+<h2 id="audit">Audit</h2>
+<p>If you're viewing the HTML5 version of my site, you can audit it via the <a rel="noopener" target="_blank" href="https://pagespeed.web.dev/report?url=corbenshiro.github.io">Lighthouse</a> tool that is bundled in Chromium-based browsers or use the URL provided. Lighthouse also supports testing with device emulation, i.e. to execute mobile mode on a desktop machine or vice versa.</p>
+<p>Use of <a rel="noopener" target="_blank" href="https://yellowlab.tools/">YellowLabTools</a> and <a rel="noopener" target="_blank" href="https://observatory.mozilla.org/analyze/corbenshiro.github.io">Observatory</a> are recommended.</p>
+
+    </article>
+    <div class="toc">
+      <div class="toc-sticky">
+        <a class="si" href="#">Index</a>
+        <div class="toc-item">
+          <a class="subtext" href="#authenticity">Authenticity</a>
+        </div>
+        <div class="toc-item">
+          <a class="subtext" href="#audit">Audit</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <hr />
+    <div class="c">
+      <nav><div><a type="application/atom+xml" href="https://corbenshiro.github.io/atom.xml" target="_blank" title="Corben Dredge Atom/RSS Feed"><i type="Button" class="svg rss" title="Corben Dredge Atom/RSS Feed"></i></a><a class="js m-protected" href="#Y2RyZWRnZUBwcm90b25tYWlsLmNo" target="_blank" title="Mail"><i type="Button" class="svg mail" title="Mail"></i></a><a href="https://codeberg.org/corbenite/" target="_blank" title="Codeberg"><i type="Button" class="svg codeberg" title="Codeberg"></i></a><a href="https://github.com/corbenshiro/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a></div></nav>
+          
+      <p class="s90"> © 2023 Corben Dredge • Blog content (text-only) is licensed <a rel="noopener" target="_blank" href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>.</p>
+      <nav>
+        <a class="s90" href="https://corbenshiro.github.io/about/"> About </a>
+        <a class="s90" href="https://corbenshiro.github.io/contact/"> Contact </a>
+        <a class="s90" href="https://corbenshiro.github.io/privacy/"> Privacy </a>
+        <a class="s90" href="https://corbenshiro.github.io/sitemap.xml" target="_blank"> Sitemap </a>
+      </nav>
+      <p class="s90">The cake is a lie.</p>
+    </div>
+  </footer>
+</body>
+</html>

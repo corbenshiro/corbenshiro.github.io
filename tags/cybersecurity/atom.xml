@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Corben Dredge - Cybersecurity</title>
+    <subtitle>General-purpose blog with a slant towards technology. Other topics will be covered.</subtitle>
+    <link href="https://corbenshiro.github.io/tags/cybersecurity/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://corbenshiro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-08-31T00:00:00+00:00</updated>
+    <id>https://corbenshiro.github.io/tags/cybersecurity/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Security of this Site</title>
+        <published>2023-08-31T00:00:00+00:00</published>
+        <updated>2023-08-31T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://corbenshiro.github.io/security/" type="text/html"/>
+        <id>https://corbenshiro.github.io/security/</id>
+        
+        <content type="html">&lt;h2 id=&quot;authenticity&quot;&gt;Authenticity&lt;&#x2F;h2&gt;
+&lt;p&gt;As of August 2023 all Git commits belonging to me are PGP-signed by my private Ed25519 subkey (certified via my master Ed25519 key). They are also pushed over SSH and authenticated by the very same subkey. I use the gpg-agent daemon to manage all of my keys.&lt;&#x2F;p&gt;
+&lt;p&gt;Whilst an issued TLS certificate associated with its respective website (e.g. HTTPS) is usually enough for authenticity (e.g. preventing MITM attacks), it does not mitigate comprehensive attack vectors such as mistakenly issued certificates and CA breaching (server-side), and certificate store poisoning (client-side).&lt;&#x2F;p&gt;
+&lt;p&gt;Still, most browsers don&#x27;t have pinned certificates, nor do many servers support key pinning. The modern web is built upon trusted roots; whilst it does have its downsides, it does however prevent sysadmins from any potential misconfiguration of their key pinning.&lt;&#x2F;p&gt;
+&lt;p&gt;Due to the aformentioned, I implore you to verify this website (contents of &lt;a href=&quot;&#x2F;&quot;&gt;&#x2F;&lt;&#x2F;a&gt;) and any of my other wares using the information provided.&lt;&#x2F;p&gt;
+&lt;p&gt;Get the public keypair to my commit signing&#x2F;pushing subkey:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;&#x2F;corbenshiro.asc&quot;&gt;&#x2F;corbenshiro.asc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;corbenshiro.gpg&quot;&gt;github.com&#x2F;corbenshiro.gpg&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;codeberg.org&#x2F;corbenite.gpg&quot;&gt;codeberg.org&#x2F;corbenite.gpg&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Cross-reference against my fingerprints:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;corbenite.codeberg.page&#x2F;fpr.txt&quot;&gt;corbenite.codeberg.page&#x2F;fpr.txt&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;corbenite.codeberg.page&#x2F;subfpr.txt&quot;&gt;corbenite.codeberg.page&#x2F;subfpr.txt&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cdredge.neocities.org&#x2F;fpr.txt&quot;&gt;cdredge.neocities.org&#x2F;fpr.txt&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cdredge.neocities.org&#x2F;subfpr.txt&quot;&gt;cdredge.neocities.org&#x2F;subfpr.txt&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cdredge.surge.sh&#x2F;fpr.txt&quot;&gt;cdredge.surge.sh&#x2F;fpr.txt&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cdredge.surge.sh&#x2F;subfpr.txt&quot;&gt;cdredge.surge.sh&#x2F;subfpr.txt&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;pub   ed25519 2023-08-31 [C]
+      CD9B FF15 C79C 2D0F 533F  682E CB01 EBA8 B48F 7A2A
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;sub   ed25519 2023-08-31 [S]
+      E1F4 B46A ED84 1C40 3ADD  1090 2BFA B105 9A58 3670
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;My public curriculum vitæ can be viewed at: &lt;a href=&quot;&#x2F;cv-public.pdf&quot;&gt;&#x2F;cv-public.pdf&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;My private curriculum vitæ (which includes my full phone no.) has a detached PGP signature which you can use to verify said CV: &lt;a href=&quot;&#x2F;cv.pdf.asc&quot;&gt;&#x2F;cv.pdf.asc&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The OpenPGP-compliant system I personally recommend is GnuPG, if you have installed the program — refer to its manpages, if not; consult the online documentation: &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;gnupg.org&#x2F;documentation&#x2F;&quot;&gt;gnupg.org&#x2F;documentation&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;audit&quot;&gt;Audit&lt;&#x2F;h2&gt;
+&lt;p&gt;If you&#x27;re viewing the HTML5 version of my site, you can audit it via the &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;pagespeed.web.dev&#x2F;report?url=corbenshiro.github.io&quot;&gt;Lighthouse&lt;&#x2F;a&gt; tool that is bundled in Chromium-based browsers or use the URL provided. Lighthouse also supports testing with device emulation, i.e. to execute mobile mode on a desktop machine or vice versa.&lt;&#x2F;p&gt;
+&lt;p&gt;Use of &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;yellowlab.tools&#x2F;&quot;&gt;YellowLabTools&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;observatory.mozilla.org&#x2F;analyze&#x2F;corbenshiro.github.io&quot;&gt;Observatory&lt;&#x2F;a&gt; are recommended.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

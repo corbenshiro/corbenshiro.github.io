@@ -1,0 +1,5 @@
+
+Sitemap: https://corbenshiro.github.io/sitemap.xml
+User-Agent: *
+Allow: /
+Host: https://corbenshiro.github.io
